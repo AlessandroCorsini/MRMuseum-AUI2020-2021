@@ -2,47 +2,37 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody playerRigidbody;
-    public float playerMovingSpeed = 10f;
-    public float strafeSpeed = 5f;
-    private float moving;
-    private float strafe;
-    public GameObject cam;
-    private float xRot = 0.0f;
-    private float yRot = 0.0f;
-    public float horizontalSensitivity = 2.0f;
-    public float verticalSensitivity = 2.0f;
-    public float rotationLimit;
-    private float runSpeed = 1;
-    public float runMultiplier = 2;
+    public CharacterController controller;
 
-    void Start()
-    {
-        playerRigidbody = GetComponent<Rigidbody>();
-    }
+    public float speed = 2f;
+    public float gravity = -9.81f;
+
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask; // which objects it should collide with
+
+    Vector3 velocity;
+    bool isGrounded;
+
 
     void Update()
     {
-        yRot = Input.GetAxis("Mouse X") * horizontalSensitivity;
-        xRot += Input.GetAxis("Mouse Y") * verticalSensitivity;
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        xRot = Mathf.Clamp(xRot, -rotationLimit, rotationLimit);
+        if(isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
 
-        cam.transform.localEulerAngles = new Vector3(-xRot, 0, 0);
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
-        transform.Rotate(0, yRot, 0);
+        Vector3 move = transform.right * x + transform.forward * z;
 
-        moving = Input.GetAxis("Vertical") * -playerMovingSpeed;
-        strafe = Input.GetAxis("Horizontal") * -strafeSpeed;
+        controller.Move(move * speed * Time.deltaTime);
 
-        runSpeed = 1.0f;
-        if (Input.GetKey(KeyCode.LeftShift))
-            runSpeed = runMultiplier;
-    }
+        velocity.y += gravity * Time.deltaTime;
 
-    void FixedUpdate()
-    {
-        playerRigidbody.AddRelativeForce(-strafe * runSpeed, 0, -moving * runSpeed);
-        playerRigidbody.velocity = Vector3.ClampMagnitude(playerRigidbody.velocity, 2 * runSpeed);
+        controller.Move(velocity * Time.deltaTime); // multiplying again due to the physics law 0.5*g*t^2
     }
 }
