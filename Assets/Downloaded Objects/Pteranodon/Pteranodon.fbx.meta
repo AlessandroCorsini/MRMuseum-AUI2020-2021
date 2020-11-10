@@ -1,0 +1,1079 @@
+fileFormatVersion: 2
+guid: f6a3b414782cd46448446b4ca785379b
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Body
+  - first:
+      1: 100002
+    second: Camera
+  - first:
+      1: 100004
+    second: Head
+  - first:
+      1: 100006
+    second: Jaw
+  - first:
+      1: 100008
+    second: LFoot
+  - first:
+      1: 100010
+    second: Light
+  - first:
+      1: 100012
+    second: LShin
+  - first:
+      1: 100014
+    second: LShoulderJoint
+  - first:
+      1: 100016
+    second: LThigh
+  - first:
+      1: 100018
+    second: LWing1
+  - first:
+      1: 100020
+    second: LWing2
+  - first:
+      1: 100022
+    second: LWing3
+  - first:
+      1: 100024
+    second: LWing4
+  - first:
+      1: 100026
+    second: Neck1
+  - first:
+      1: 100028
+    second: Neck2
+  - first:
+      1: 100030
+    second: Pteranodon
+  - first:
+      1: 100032
+    second: //RootNode
+  - first:
+      1: 100034
+    second: RFoot
+  - first:
+      1: 100036
+    second: RShin
+  - first:
+      1: 100038
+    second: RShoulderJoint
+  - first:
+      1: 100040
+    second: RThigh
+  - first:
+      1: 100042
+    second: RWing1
+  - first:
+      1: 100044
+    second: RWing2
+  - first:
+      1: 100046
+    second: RWing3
+  - first:
+      1: 100048
+    second: RWing4
+  - first:
+      4: 400000
+    second: Body
+  - first:
+      4: 400002
+    second: Camera
+  - first:
+      4: 400004
+    second: Head
+  - first:
+      4: 400006
+    second: Jaw
+  - first:
+      4: 400008
+    second: LFoot
+  - first:
+      4: 400010
+    second: Light
+  - first:
+      4: 400012
+    second: LShin
+  - first:
+      4: 400014
+    second: LShoulderJoint
+  - first:
+      4: 400016
+    second: LThigh
+  - first:
+      4: 400018
+    second: LWing1
+  - first:
+      4: 400020
+    second: LWing2
+  - first:
+      4: 400022
+    second: LWing3
+  - first:
+      4: 400024
+    second: LWing4
+  - first:
+      4: 400026
+    second: Neck1
+  - first:
+      4: 400028
+    second: Neck2
+  - first:
+      4: 400030
+    second: Pteranodon
+  - first:
+      4: 400032
+    second: //RootNode
+  - first:
+      4: 400034
+    second: RFoot
+  - first:
+      4: 400036
+    second: RShin
+  - first:
+      4: 400038
+    second: RShoulderJoint
+  - first:
+      4: 400040
+    second: RThigh
+  - first:
+      4: 400042
+    second: RWing1
+  - first:
+      4: 400044
+    second: RWing2
+  - first:
+      4: 400046
+    second: RWing3
+  - first:
+      4: 400048
+    second: RWing4
+  - first:
+      43: 4300000
+    second: Pteranodon
+  - first:
+      74: 7400000
+    second: Stand Still
+  - first:
+      74: 7400002
+    second: Fly
+  - first:
+      74: 7400004
+    second: Glide
+  - first:
+      74: 7400006
+    second: Ground Attack
+  - first:
+      74: 7400008
+    second: Attack Die
+  - first:
+      74: 7400010
+    second: Fall
+  - first:
+      74: 7400012
+    second: Fall Die
+  - first:
+      74: 7400014
+    second: Idle
+  - first:
+      74: 7400016
+    second: Take Off
+  - first:
+      74: 7400018
+    second: Land
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      111: 11100000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Pteranodon
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Stand Still
+      takeName: Base Stack
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 0.1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Light
+        weight: 1
+      - path: Pteranodon
+        weight: 1
+      - path: Pteranodon/Body
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3/LWing4
+        weight: 1
+      - path: Pteranodon/Body/LThigh
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin/LFoot
+        weight: 1
+      - path: Pteranodon/Body/Neck1
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head/Jaw
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3/RWing4
+        weight: 1
+      - path: Pteranodon/Body/RThigh
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin/RFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fly
+      takeName: Base Stack
+      internalID: 0
+      firstFrame: 3
+      lastFrame: 31
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Light
+        weight: 1
+      - path: Pteranodon
+        weight: 1
+      - path: Pteranodon/Body
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3/LWing4
+        weight: 1
+      - path: Pteranodon/Body/LThigh
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin/LFoot
+        weight: 1
+      - path: Pteranodon/Body/Neck1
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head/Jaw
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3/RWing4
+        weight: 1
+      - path: Pteranodon/Body/RThigh
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin/RFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Glide
+      takeName: Base Stack
+      internalID: 0
+      firstFrame: 34
+      lastFrame: 44
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Light
+        weight: 1
+      - path: Pteranodon
+        weight: 1
+      - path: Pteranodon/Body
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3/LWing4
+        weight: 1
+      - path: Pteranodon/Body/LThigh
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin/LFoot
+        weight: 1
+      - path: Pteranodon/Body/Neck1
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head/Jaw
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3/RWing4
+        weight: 1
+      - path: Pteranodon/Body/RThigh
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin/RFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ground Attack
+      takeName: Base Stack
+      internalID: 0
+      firstFrame: 47
+      lastFrame: 77
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Light
+        weight: 1
+      - path: Pteranodon
+        weight: 1
+      - path: Pteranodon/Body
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3/LWing4
+        weight: 1
+      - path: Pteranodon/Body/LThigh
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin/LFoot
+        weight: 1
+      - path: Pteranodon/Body/Neck1
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head/Jaw
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3/RWing4
+        weight: 1
+      - path: Pteranodon/Body/RThigh
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin/RFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack Die
+      takeName: Base Stack
+      internalID: 0
+      firstFrame: 80
+      lastFrame: 108
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Light
+        weight: 1
+      - path: Pteranodon
+        weight: 1
+      - path: Pteranodon/Body
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3/LWing4
+        weight: 1
+      - path: Pteranodon/Body/LThigh
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin/LFoot
+        weight: 1
+      - path: Pteranodon/Body/Neck1
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head/Jaw
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3/RWing4
+        weight: 1
+      - path: Pteranodon/Body/RThigh
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin/RFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fall
+      takeName: Base Stack
+      internalID: 0
+      firstFrame: 111
+      lastFrame: 127
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Light
+        weight: 1
+      - path: Pteranodon
+        weight: 1
+      - path: Pteranodon/Body
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3/LWing4
+        weight: 1
+      - path: Pteranodon/Body/LThigh
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin/LFoot
+        weight: 1
+      - path: Pteranodon/Body/Neck1
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head/Jaw
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3/RWing4
+        weight: 1
+      - path: Pteranodon/Body/RThigh
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin/RFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fall Die
+      takeName: Base Stack
+      internalID: 0
+      firstFrame: 128
+      lastFrame: 145
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Light
+        weight: 1
+      - path: Pteranodon
+        weight: 1
+      - path: Pteranodon/Body
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3/LWing4
+        weight: 1
+      - path: Pteranodon/Body/LThigh
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin/LFoot
+        weight: 1
+      - path: Pteranodon/Body/Neck1
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head/Jaw
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3/RWing4
+        weight: 1
+      - path: Pteranodon/Body/RThigh
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin/RFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Base Stack
+      internalID: 0
+      firstFrame: 148
+      lastFrame: 235
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Light
+        weight: 1
+      - path: Pteranodon
+        weight: 1
+      - path: Pteranodon/Body
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3/LWing4
+        weight: 1
+      - path: Pteranodon/Body/LThigh
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin/LFoot
+        weight: 1
+      - path: Pteranodon/Body/Neck1
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head/Jaw
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3/RWing4
+        weight: 1
+      - path: Pteranodon/Body/RThigh
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin/RFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Take Off
+      takeName: Base Stack
+      internalID: 0
+      firstFrame: 236
+      lastFrame: 262
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Light
+        weight: 1
+      - path: Pteranodon
+        weight: 1
+      - path: Pteranodon/Body
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3/LWing4
+        weight: 1
+      - path: Pteranodon/Body/LThigh
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin/LFoot
+        weight: 1
+      - path: Pteranodon/Body/Neck1
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head/Jaw
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3/RWing4
+        weight: 1
+      - path: Pteranodon/Body/RThigh
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin/RFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Land
+      takeName: Base Stack
+      internalID: 0
+      firstFrame: 263
+      lastFrame: 288
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Light
+        weight: 1
+      - path: Pteranodon
+        weight: 1
+      - path: Pteranodon/Body
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3
+        weight: 1
+      - path: Pteranodon/Body/LShoulderJoint/LWing1/LWing2/LWing3/LWing4
+        weight: 1
+      - path: Pteranodon/Body/LThigh
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin
+        weight: 1
+      - path: Pteranodon/Body/LThigh/LShin/LFoot
+        weight: 1
+      - path: Pteranodon/Body/Neck1
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head
+        weight: 1
+      - path: Pteranodon/Body/Neck1/Neck2/Head/Jaw
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3
+        weight: 1
+      - path: Pteranodon/Body/RShoulderJoint/RWing1/RWing2/RWing3/RWing4
+        weight: 1
+      - path: Pteranodon/Body/RThigh
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin
+        weight: 1
+      - path: Pteranodon/Body/RThigh/RShin/RFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 1
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
