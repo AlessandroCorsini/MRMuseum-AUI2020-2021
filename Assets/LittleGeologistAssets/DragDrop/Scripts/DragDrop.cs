@@ -9,6 +9,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    public GameObject startSlot;
+    public GameObject igneousSlot;
+    public GameObject sedimentarySlot;
+    public GameObject metamorphicSlot;
 
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
@@ -16,7 +20,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
-        Debug.Log("OnBeginDrag");
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
     }
@@ -27,13 +30,19 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+
+        if (rectTransform.position != igneousSlot.GetComponent<RectTransform>().position ||
+             rectTransform.position != sedimentarySlot.GetComponent<RectTransform>().position ||
+             rectTransform.position != metamorphicSlot.GetComponent<RectTransform>().position )
+        {
+            rectTransform.anchoredPosition = startSlot.GetComponent<RectTransform>().anchoredPosition;
+        }
     }
 
-    public void OnPointerDown(PointerEventData eventData) {
-        Debug.Log("OnPointerDown");
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        return;
     }
-
 }

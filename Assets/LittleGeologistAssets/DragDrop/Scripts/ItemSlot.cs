@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using EZCameraShake;
 
 public class ItemSlot : MonoBehaviour, IDropHandler {
 
@@ -11,15 +12,20 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
     public GameObject[] rocks;
     public string[] rocksNames;
     public TextMesh nameDisplay;
+    public static bool isInASlot;
 
     public void Start()
     {
         nameDisplay.text = rocksNames[0];
+        isInASlot = false;
     }
+    
 
     public void OnDrop(PointerEventData eventData) {
 
         if (eventData.pointerDrag != null) {
+
+            isInASlot = true;
 
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
 
@@ -32,7 +38,9 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
             }
             else
             {
+                CameraShaker.GetInstance("Main Camera").ShakeOnce(4f, 4f, .1f, 2f);
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = slotStart.GetComponent<RectTransform>().anchoredPosition;
+                isInASlot = false;
             }
 
         }
