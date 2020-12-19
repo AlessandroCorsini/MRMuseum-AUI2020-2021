@@ -30,5 +30,5 @@ Material:
     m_Floats:
     - _Shininess: 0.078125
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 0.1567164, g: 0.1567164, b: 0.1567164, a: 1}
+    - _Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}

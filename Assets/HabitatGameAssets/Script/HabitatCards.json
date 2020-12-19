@@ -1,0 +1,55 @@
+{
+  "cards":
+  [
+    {
+      "team":"A",
+      "animal": "leone",
+      "habitat": "savana" 
+    },
+    {
+      "team":"A",
+      "animal": "orso",
+      "habitat": "foresta" 
+    },
+    {
+      "team":"A",
+      "animal": "giraffa",
+      "habitat": "savana" 
+    },
+    {
+      "team":"A",
+      "animal": "pinguino",
+      "habitat": "antartide" 
+    },
+    {
+      "team":"A",
+      "animal": "lupo",
+      "habitat": "foresta" 
+    },
+    {
+      "team":"B",
+      "animal": "zebra",
+      "habitat": "savana" 
+    },
+    {
+      "team":"B",
+      "animal": "elefante",
+      "habitat": "savana"
+    },
+    {
+      "team":"B",
+      "animal": "cervo",
+      "habitat": "foresta"
+    },
+    {
+      "team":"B",
+      "animal": "orso polare",
+      "habitat": "antartide"
+    },
+    {
+      "team":"B",
+      "animal": "volpe",
+      "habitat": "foresta"
+    }
+  ]
+}

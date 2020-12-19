@@ -32,7 +32,7 @@ public class ExtendedFlycam : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
+        Cursor.visible = true;
     }
 
     void Update()

@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Savana
+    uniqueID: 1644717331
+    locked: 0
+  - name: Forest
+    uniqueID: 3469288353
+    locked: 0
+  - name: Antartide
+    uniqueID: 3535258343
+    locked: 0
