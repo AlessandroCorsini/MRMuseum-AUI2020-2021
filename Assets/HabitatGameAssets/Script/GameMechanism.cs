@@ -62,6 +62,9 @@ public class GameMechanism : MonoBehaviour
     public Image correct;
     public Image wrong;
 
+    public GameObject animalsObjects;
+    private GameObject animalToSetActive;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -189,6 +192,7 @@ void Update()
                 if (selectedHabitat == searchedAnimalCard.First().habitat)
                 {
                     StartCoroutine(StartFeedbackPositive());
+                    setAnimalActive(searchedAnimalCard.First().animal);
                     UpdateScore(playingTeam);
                 }
                 else
@@ -222,6 +226,7 @@ void Update()
                 else
                 {
                     StartCoroutine(StartFeedbackPositive());
+                    setAnimalActive(selectedAnimal);
                     UpdateScore(playingTeam);
                     ScreenFade(searchedHabitatCard.First().habitat);
                     FloorFade(searchedHabitatCard.First().habitat);
@@ -460,6 +465,14 @@ void Update()
                 aud.PlayOneShot(clip);
             }
         }
+    }
+
+    public void setAnimalActive(string animal)
+    {
+        Debug.Log(animalsObjects);
+        animalToSetActive = animalsObjects.transform.Find(animal).gameObject;
+        Debug.Log(animalToSetActive);
+        animalToSetActive.SetActive(true);
     }
 
     public IEnumerator StartFeedbackPositive()

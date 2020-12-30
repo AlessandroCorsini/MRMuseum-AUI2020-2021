@@ -18,7 +18,6 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
     public Image negative;
     public GameObject canvas;
 
-
     public void Start()
     {
         nameDisplay.text = rocksNames[0];
@@ -69,6 +68,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
         {
             rocks[Counting.rockCounter].SetActive(true);
             Counting.updateCounter();
+            RockTexure.updateCount();
             nameDisplay.text = rocksNames[Counting.rockCounter-1];
         }
         else
