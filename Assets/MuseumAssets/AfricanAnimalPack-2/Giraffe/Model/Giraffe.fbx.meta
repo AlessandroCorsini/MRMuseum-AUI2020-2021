@@ -342,12 +342,7 @@ ModelImporter:
   - first:
       137: 13700000
     second: Giraffe_msh
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: GiraffeMaterial
-    second: {fileID: 2100000, guid: 928862d1cefb67140b3678bc3ecaec2f, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -468,7 +463,7 @@ ModelImporter:
       internalID: 0
       firstFrame: 61
       lastFrame: 199
-      wrapMode: 2
+      wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
