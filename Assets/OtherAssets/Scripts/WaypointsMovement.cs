@@ -20,6 +20,8 @@ public class WaypointsMovement : MonoBehaviour
     private Vector3 nullVector;
     private bool[] starredDirections = new bool[4];
 
+    public string nextSceneName;
+
     private void Start()
     {
         nullVector = new Vector3(-1000f, -1000f, -1000f);
@@ -101,6 +103,7 @@ public class WaypointsMovement : MonoBehaviour
         unlocked = true;
         ArrowManager.decodeDisabledDirections(getNotNullDirections());
         ArrowManager.decodeStarredDirections(starredDirections);
+        ArrowManager.saveNextSceneName(nextSceneName);
         InputMR.setNewWaypoint();
         InputMR.clearEventHappened();
 

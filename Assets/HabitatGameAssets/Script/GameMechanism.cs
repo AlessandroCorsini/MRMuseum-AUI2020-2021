@@ -54,7 +54,8 @@ public class GameMechanism : MonoBehaviour
 
     public Text timer;
     float currentTime = 0f;
-    float startingTime = 300.0f;
+    public float startingTime = 300.0f;
+    bool active = true;
 
     public List<AudioClip> clips;
     public static AudioSource aud;
@@ -64,6 +65,10 @@ public class GameMechanism : MonoBehaviour
 
     public GameObject animalsObjects;
     private GameObject animalToSetActive;
+    public GameObject FinalBackground;
+    public GameObject FinalFloorBackground;
+
+    public Text error;
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +101,7 @@ public class GameMechanism : MonoBehaviour
         teamAscore.text = scoreA.ToString();
         teamBscore.text = scoreB.ToString();
         victoryMessage.text = "";
+        error.text = "";
 
         currentTime = startingTime;
 
@@ -110,66 +116,78 @@ public class GameMechanism : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        int minute = 1;
+        int seconds = 1;
+
+        if (active)
         {
-            CheckMatch("leone");
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            CheckMatch("giraffa");
-        }
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            CheckMatch("zebra");
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            CheckMatch("volpe");
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            CheckMatch("elefante");
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            CheckMatch("cervo");
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            CheckMatch("orso polare");
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            CheckMatch("lupo");
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            CheckMatch("pinguino");
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            CheckMatch("orso");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            CheckMatch("savana");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            CheckMatch("foresta");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            CheckMatch("antartide");
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                CheckMatch("leone");
+            }
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                CheckMatch("giraffa");
+            }
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                CheckMatch("zebra");
+            }
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                CheckMatch("volpe");
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                CheckMatch("elefante");
+            }
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                CheckMatch("cervo");
+            }
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                CheckMatch("orso polare");
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                CheckMatch("lupo");
+            }
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                CheckMatch("pinguino");
+            }
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                CheckMatch("orso");
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                CheckMatch("savana");
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                CheckMatch("foresta");
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                CheckMatch("antartide");
+            }
+
+            currentTime -= 1 * Time.deltaTime;
+            minute = ((int)currentTime / 60);
+            seconds = ((int)currentTime % 60);
+
+            if (currentTime >= 0)
+            {
+                timer.text = minute + ":" + seconds;
+            }
+            else
+                TimerEnded();
         }
 
         teamAscore.text = scoreA.ToString();
         teamBscore.text = scoreB.ToString();
-
-        currentTime -= 1 * Time.deltaTime;
-        int minute = ((int)currentTime / 60);
-        int seconds = ((int)currentTime % 60);
-        timer.text = minute + ":" + seconds;
     }
 
     private void CheckMatch(string card)
@@ -204,7 +222,7 @@ void Update()
             }
             else
             {
-                Debug.Log("Error: two animal scanned");
+                StartCoroutine(StartErrorDisplay("You cannot scan two animals in a row. \n Please provide an animal and an habitat"));
                 ResetMatch();
             }
         }
@@ -236,7 +254,7 @@ void Update()
             }
             else
             {
-                Debug.Log("Error: two habitat scanned");
+                StartCoroutine(StartErrorDisplay("You cannot scan two habitats in a row. \n Please provide an animal and an habitat"));
                 ResetMatch();
             }
         }     
@@ -445,16 +463,28 @@ void Update()
         if (team == "A")
         {
             scoreA += 1;
-            if(scoreA == 5)
-                victoryMessage.text = "Team A wins!";
+            if (scoreA == 5)
+                StartCoroutine(DeclareWinner("TEAM A WINS"));
         }
         else if(team == "B")
         {
             scoreB += 1;
             if (scoreB == 5)
-                victoryMessage.text = "Team B wins!";
+                StartCoroutine(DeclareWinner("TEAM B WINS"));
         }
     }
+
+    public IEnumerator DeclareWinner(string message)
+    {
+        yield return new WaitForSeconds(2.0f);
+        FinalBackground.SetActive(true);
+        FinalFloorBackground.SetActive(true);
+        activeRender.GetComponent<Animation>().Play("CrossFade");
+        activeRenderFloor.GetComponent<Animation>().Play("CrossFade");
+        victoryMessage.text = message;
+        active = false;
+    }
+
 
     public void PlayAudioClip(string clipToPlay)
     {
@@ -484,6 +514,17 @@ void Update()
         yield return new WaitForSeconds(1.0f);
     }
 
+    public IEnumerator StartErrorDisplay(string text)
+    {
+        PlayWrongSounds.PlayWrongSound();
+        error.text = text;
+        error.CrossFadeAlpha(1, 2, false);
+        yield return new WaitForSeconds(2.0f);
+        error.CrossFadeAlpha(0, 1, false);
+        yield return new WaitForSeconds(1.0f);
+        error.text = "";
+    }
+
     public IEnumerator StartFeedbackNegative()
     {
         PlayWrongSounds.PlayWrongSound();
@@ -492,5 +533,19 @@ void Update()
         wrong.CrossFadeAlpha(0, 1, false);
         yield return new WaitForSeconds(1.0f);
     }
+
+    public void TimerEnded()
+    {
+        PlayWrongSounds.PlayWrongSound();
+        timer.color = Color.red;
+        active = false;
+
+        if (scoreA > scoreB)
+            StartCoroutine(DeclareWinner("TEAM A WINS"));
+        else if (scoreB > scoreA)
+            StartCoroutine(DeclareWinner("TEAM B WINS"));
+        else
+            StartCoroutine(DeclareWinner("DRAW"));
+        ;    }
 }
  

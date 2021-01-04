@@ -8,6 +8,8 @@ public class ArrowManager
     private static List<string> starredDirections;
     private static List<string> disabledDirections;
 
+    public static string nextSceneName;
+
     private static string raycastedArrow = "None";
     private static bool hitRaycasting = false;
     private static bool unhitRaycasting = true;
@@ -148,4 +150,15 @@ public class ArrowManager
         hitRaycasting = false;
         unhitRaycasting = true;
     }
+
+    public static void saveNextSceneName(string sceneName)
+    {
+        nextSceneName = sceneName;
+    }
+
+    public static string getNextSceneName()
+    {
+        return nextSceneName;
+    }
+
 }

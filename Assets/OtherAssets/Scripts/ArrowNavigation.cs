@@ -78,6 +78,7 @@ public class ArrowNavigation : MonoBehaviour
         {
             star.SetActive(false);
             hoveredStar.SetActive(true);
+
         } else if (!disabledArrow)
         {
             arrow.SetActive(false);
@@ -100,7 +101,8 @@ public class ArrowNavigation : MonoBehaviour
             hoveredArrow.SetActive(false);
         }
 
-        if (!disabledArrow)
+
+        if (!disabledArrow || starredArrow)
         {
             Debug.Log("pressed time: " + (end - start));
 
@@ -108,6 +110,8 @@ public class ArrowNavigation : MonoBehaviour
             {
                 if (starredArrow) // to implement transactions between scenes
                 {
+                    string nextSceneName = ArrowManager.getNextSceneName();
+                    LevelLoader.startTransition(nextSceneName);
                     return;
                 }
                 Debug.Log(this.name + ":: Event happended sent to InputMR");

@@ -6,7 +6,8 @@ using EZCameraShake;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ItemSlot : MonoBehaviour, IDropHandler {
+//IDropHandler
+public class ItemSlot : MonoBehaviour {
 
     public List<GameObject> correctRocks;
     public GameObject slotStart;
@@ -17,6 +18,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
     public Image positive;
     public Image negative;
     public GameObject canvas;
+    GameObject detectedRock;
+    public string nextSceneName;
 
     public void Start()
     {
@@ -24,8 +27,36 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
         positive.canvasRenderer.SetAlpha(0.0f);
         negative.canvasRenderer.SetAlpha(0.0f);
     }
-    
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.transform.GetChild(0) != null)
+        {
+            detectedRock = collision.transform.GetChild(0).gameObject;
+            Debug.Log(detectedRock);
+        }
+    }
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (correctRocks.Contains(detectedRock))
+            {
+                detectedRock.SetActive(false);
+                StartCoroutine(StartFeedbackPositive());
+            }    
+            else
+            {
+                CameraShaker.GetInstance("Main Camera").ShakeOnce(4f, 4f, .1f, 2f);
+                StartCoroutine(StartFeedbackNegative());
+                detectedRock.GetComponent<RectTransform>().anchoredPosition = slotStart.GetComponent<RectTransform>().anchoredPosition;
+            }    
+
+        }
+    }
+
+    /*
     public void OnDrop(PointerEventData eventData) {
 
         if (eventData.pointerDrag != null) {
@@ -46,6 +77,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
 
         }
     }
+    */
 
     private void nextLavaLevelOn()
     {
@@ -73,7 +105,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
         }
         else
         {
-            LevelLoader.Eruption();
+            CameraShaker.GetInstance("Main Camera").ShakeOnce(4f, 4f, .1f, 2f);
+            LevelLoader.startTransition(nextSceneName);
             canvas.SetActive(false);
 
         }

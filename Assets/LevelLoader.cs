@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
+    public Animator transitionFloor;
     public float transitionTime = 1f;
     public static bool startAnimation = false;
+    public static string nextSceneName;
 
     public void Update()
     {
@@ -27,16 +29,18 @@ public class LevelLoader : MonoBehaviour
     {
         //Play animation
         transition.SetTrigger("start");
+        transitionFloor.SetTrigger("start");
 
         // Wait
         yield return new WaitForSeconds(transitionTime);
 
         //load scene
-        SceneManager.LoadScene("VolcanoExplosion"); 
+        SceneManager.LoadScene(nextSceneName); 
     }
 
-    public static void Eruption()
+    public static void startTransition(string sceneName)
     {
         startAnimation = true;
+        nextSceneName = sceneName;
     }
 }
