@@ -122,26 +122,38 @@ public class WaypointsMovement : MonoBehaviour
 
         if (dir == 0)
         {
-            // trying to move right
-            return moveToWaypoint(wayPointSouth);
+            // trying to move south
+            if (wayPointSouth != null)
+                return moveToWaypoint(wayPointSouth);
+            else
+                return nullVector;
 
         }
         else if (dir == 1)
         {
-            // trying to move left
-            return moveToWaypoint(wayPointEast);
+            // trying to move east
+            if (wayPointEast != null)
+                return moveToWaypoint(wayPointEast);
+            else
+                return nullVector;
 
         }
         else if (dir == 2)
         {
             // trying to move up
-            return moveToWaypoint(wayPointNorth);
+            if (wayPointNorth != null)
+                return moveToWaypoint(wayPointNorth);
+            else
+                return nullVector;
 
         }
         else if (dir == 3)
         {
-            // trying to move down
-            return moveToWaypoint(wayPointWest);
+            // trying to move left
+            if (wayPointWest != null)
+                return moveToWaypoint(wayPointWest);
+            else
+                return nullVector; 
 
         }
         else

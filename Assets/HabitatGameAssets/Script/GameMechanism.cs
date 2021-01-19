@@ -16,6 +16,7 @@ public class GameMechanism : MonoBehaviour
         public string team;
     }
 
+    public static bool startGame = false;
     public TextAsset jsonFile;
     JObject cards;
     IList<Card> allCards = new List<Card>();
@@ -67,6 +68,7 @@ public class GameMechanism : MonoBehaviour
     private GameObject animalToSetActive;
     public GameObject FinalBackground;
     public GameObject FinalFloorBackground;
+    public GameObject finalEmiMessage;
 
     public Text error;
 
@@ -116,78 +118,86 @@ public class GameMechanism : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
-        int minute = 1;
-        int seconds = 1;
-
-        if (active)
+        if (startGame)
         {
-            if (Input.GetKeyDown(KeyCode.L))
+            int minute = 1;
+            int seconds = 1;
+
+            if (active)
             {
-                CheckMatch("leone");
-            }
-            if (Input.GetKeyDown(KeyCode.G))
-            {
-                CheckMatch("giraffa");
-            }
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                CheckMatch("zebra");
-            }
-            if (Input.GetKeyDown(KeyCode.V))
-            {
-                CheckMatch("volpe");
-            }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                CheckMatch("elefante");
-            }
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                CheckMatch("cervo");
-            }
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                CheckMatch("orso polare");
-            }
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                CheckMatch("lupo");
-            }
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                CheckMatch("pinguino");
-            }
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                CheckMatch("orso");
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                CheckMatch("savana");
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                CheckMatch("foresta");
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                CheckMatch("antartide");
+                if (Input.GetKeyDown(KeyCode.L))
+                {
+                    CheckMatch("leone");
+                }
+                if (Input.GetKeyDown(KeyCode.G))
+                {
+                    CheckMatch("giraffa");
+                }
+                if (Input.GetKeyDown(KeyCode.Z))
+                {
+                    CheckMatch("zebra");
+                }
+                if (Input.GetKeyDown(KeyCode.V))
+                {
+                    CheckMatch("volpe");
+                }
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    CheckMatch("elefante");
+                }
+                if (Input.GetKeyDown(KeyCode.C))
+                {
+                    CheckMatch("cervo");
+                }
+                if (Input.GetKeyDown(KeyCode.K))
+                {
+                    CheckMatch("orso polare");
+                }
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    CheckMatch("lupo");
+                }
+                if (Input.GetKeyDown(KeyCode.P))
+                {
+                    CheckMatch("pinguino");
+                }
+                if (Input.GetKeyDown(KeyCode.O))
+                {
+                    CheckMatch("orso");
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                {
+                    CheckMatch("savana");
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    CheckMatch("foresta");
+                }
+                if (Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    CheckMatch("antartide");
+                }
+
+                currentTime -= 1 * Time.deltaTime;
+                minute = ((int)currentTime / 60);
+                seconds = ((int)currentTime % 60);
+
+                if (currentTime >= 0)
+                {
+                    timer.text = minute + ":" + seconds;
+                }
+                else
+                    TimerEnded();
             }
 
-            currentTime -= 1 * Time.deltaTime;
-            minute = ((int)currentTime / 60);
-            seconds = ((int)currentTime % 60);
-
-            if (currentTime >= 0)
-            {
-                timer.text = minute + ":" + seconds;
-            }
-            else
-                TimerEnded();
+            teamAscore.text = scoreA.ToString();
+            teamBscore.text = scoreB.ToString();
         }
+    }
 
-        teamAscore.text = scoreA.ToString();
-        teamBscore.text = scoreB.ToString();
+    public static void GameStart()
+    {
+        startGame = true;
     }
 
     private void CheckMatch(string card)
@@ -479,10 +489,14 @@ void Update()
         yield return new WaitForSeconds(2.0f);
         FinalBackground.SetActive(true);
         FinalFloorBackground.SetActive(true);
+        finalEmiMessage.SetActive(true);
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.yellow);
         activeRender.GetComponent<Animation>().Play("CrossFade");
         activeRenderFloor.GetComponent<Animation>().Play("CrossFade");
         victoryMessage.text = message;
         active = false;
+        yield return new WaitForSeconds(1.0f);
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.black);
     }
 
 
@@ -509,8 +523,10 @@ void Update()
     {
         CorrectSound.PlayCorrectSound();
         correct.CrossFadeAlpha(1, 2, false);
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.green);
         yield return new WaitForSeconds(2.0f);
         correct.CrossFadeAlpha(0, 1, false);
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.black);
         yield return new WaitForSeconds(1.0f);
     }
 
@@ -529,8 +545,10 @@ void Update()
     {
         PlayWrongSounds.PlayWrongSound();
         wrong.CrossFadeAlpha(1, 2, false);
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.red);
         yield return new WaitForSeconds(2.0f);
         wrong.CrossFadeAlpha(0, 1, false);
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.black);
         yield return new WaitForSeconds(1.0f);
     }
 

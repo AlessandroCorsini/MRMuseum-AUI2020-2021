@@ -51,6 +51,8 @@ public class MagicRoomTextToSpeachManager : MonoBehaviour
         StartCoroutine(SendCommand(command, (body) => {
             SpeachToTextOfflineConfiguration conf = JsonUtility.FromJson<SpeachToTextOfflineConfiguration>(body);
             ListOfVoice.Clear();
+            Debug.Log(body);
+            Debug.Log(conf);
             ListOfVoice.AddRange(conf.voices);
             string log = "";
             foreach (Voices s in ListOfVoice)

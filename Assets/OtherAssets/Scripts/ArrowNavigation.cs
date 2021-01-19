@@ -8,6 +8,7 @@ public class ArrowNavigation : MonoBehaviour
     public GameObject hoveredArrow;
     public GameObject star;
     public GameObject hoveredStar;
+    public GameObject gameMenu;
 
     private bool starredArrow = false;
     private bool disabledArrow = false;
@@ -94,6 +95,8 @@ public class ArrowNavigation : MonoBehaviour
         {
             star.SetActive(true);
             hoveredStar.SetActive(false);
+            gameMenu.SetActive(true);
+            ActivityIntroduction.SetActivityName(ArrowManager.nextSceneName);
         }
         else if (!disabledArrow)
         {
@@ -110,9 +113,22 @@ public class ArrowNavigation : MonoBehaviour
             {
                 if (starredArrow) // to implement transactions between scenes
                 {
-                    string nextSceneName = ArrowManager.getNextSceneName();
-                    LevelLoader.startTransition(nextSceneName);
-                    return;
+                    if (ActivityIntroduction.GetFirstPress())
+                    {
+                        ActivityIntroduction.SetFirstPress();
+                    }
+                    else
+                    {
+                        gameMenu.SetActive(false);
+                        string nextSceneName = ArrowManager.getNextSceneName();
+                        LevelLoader.startTransition(nextSceneName);
+                        return;
+                    }
+                }
+                else
+                {
+                    gameMenu.SetActive(false);
+                    ActivityIntroduction.SetFirstPress();
                 }
                 Debug.Log(this.name + ":: Event happended sent to InputMR");
                 InputMR.setEventHappened(this.name);

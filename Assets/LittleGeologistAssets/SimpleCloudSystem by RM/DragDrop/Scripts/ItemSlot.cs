@@ -20,20 +20,36 @@ public class ItemSlot : MonoBehaviour {
     public GameObject canvas;
     GameObject detectedRock;
     public string nextSceneName;
+    public static bool start = false;
+    public GameObject winningObjects;
+    public GameObject gameObjects;
 
     public void Start()
     {
-        nameDisplay.text = rocksNames[0];
         positive.canvasRenderer.SetAlpha(0.0f);
         negative.canvasRenderer.SetAlpha(0.0f);
     }
 
+    public void Update()
+    {
+        if (start)
+        {
+            start = false;
+            nameDisplay.text = rocksNames[0];
+        }
+    }
+
+    public static void GameStart()
+    {
+        start = true;
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.GetChild(0) != null)
+        if (collision.transform.GetChild(0) != null)
         {
             detectedRock = collision.transform.GetChild(0).gameObject;
-            Debug.Log(detectedRock);
+                Debug.Log(detectedRock.name + " enter");
         }
     }
 
@@ -41,9 +57,11 @@ public class ItemSlot : MonoBehaviour {
     {
         if (Input.GetMouseButtonUp(0))
         {
+            Debug.Log(detectedRock.name + " stay");
             if (correctRocks.Contains(detectedRock))
             {
                 detectedRock.SetActive(false);
+                detectedRock.transform.SetParent(null);
                 StartCoroutine(StartFeedbackPositive());
             }    
             else
@@ -56,28 +74,6 @@ public class ItemSlot : MonoBehaviour {
         }
     }
 
-    /*
-    public void OnDrop(PointerEventData eventData) {
-
-        if (eventData.pointerDrag != null) {
-
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-
-            if(correctRocks.Contains(eventData.pointerDrag.gameObject))
-            {
-                eventData.pointerDrag.gameObject.SetActive(false);
-                StartCoroutine(StartFeedbackPositive());
-            }
-            else
-            {
-                CameraShaker.GetInstance("Main Camera").ShakeOnce(4f, 4f, .1f, 2f);
-                StartCoroutine(StartFeedbackNegative());
-                eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = slotStart.GetComponent<RectTransform>().anchoredPosition;
-            }
-
-        }
-    }
-    */
 
     private void nextLavaLevelOn()
     {
@@ -106,19 +102,32 @@ public class ItemSlot : MonoBehaviour {
         else
         {
             CameraShaker.GetInstance("Main Camera").ShakeOnce(4f, 4f, .1f, 2f);
-            LevelLoader.startTransition(nextSceneName);
-            canvas.SetActive(false);
+
+            StartCoroutine(Eruption());
 
         }
+    }
+
+    public IEnumerator Eruption()
+    {
+        winningObjects.SetActive(true);
+        gameObjects.GetComponent<CanvasGroup>().alpha = 0f;
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.red);
+        yield return new WaitForSeconds(3f);
+        Debug.Log("transition");
+        LevelLoader.startTransition(nextSceneName);
+        canvas.SetActive(false);
     }
 
     public IEnumerator StartFeedbackPositive()
     {
         CorrectSound.PlayCorrectSound();
         positive.CrossFadeAlpha(1, 2, false);
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.green);
         yield return new WaitForSeconds(2.0f);
         positive.CrossFadeAlpha(0, 1, false);
         nextLavaLevelOn();
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.black);
         yield return new WaitForSeconds(1.0f);
         nextRock();
     }
@@ -127,8 +136,10 @@ public class ItemSlot : MonoBehaviour {
     {
         PlayWrongSounds.PlayWrongSound();
         negative.CrossFadeAlpha(1, 2, false);
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.red);
         yield return new WaitForSeconds(2.0f);
         negative.CrossFadeAlpha(0, 1, false);
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.black);
         yield return new WaitForSeconds(1.0f);
     }
 

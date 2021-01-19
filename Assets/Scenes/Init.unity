@@ -193,7 +193,7 @@ PrefabInstance:
     - target: {fileID: 4004684513402697593, guid: 50a6b60aea17c5d42b136bc7d32aa701,
         type: 3}
       propertyPath: portHTTP
-      value: 7014
+      value: 7013
       objectReference: {fileID: 0}
     - target: {fileID: 4004684513402697593, guid: 50a6b60aea17c5d42b136bc7d32aa701,
         type: 3}
@@ -382,6 +382,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5414558974545057845, guid: c28f6012ad6efe541bdb14c2dac3b2d5,
+        type: 3}
+      propertyPath: players.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6928032050551932261, guid: c28f6012ad6efe541bdb14c2dac3b2d5,
         type: 3}
       propertyPath: m_LocalPosition.x
