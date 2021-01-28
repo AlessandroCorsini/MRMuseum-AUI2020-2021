@@ -11,21 +11,42 @@ public class MuseumIntroduction : MonoBehaviour
     public Animator fadeOutAnimator;
     public static bool buttonPressed = false;
     public float textTime = 0.02f;
+    public static bool startGameBool = false;
+    public static bool noIntroduction = false;
+    public GameObject introductionObjects;
 
 
-    public void Start()
+    public static void StartGameBool()
     {
-        StartIntroduction();
-        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.yellow);
-        MagicRoomManager.instance.MagicRoomTextToSpeachManager.EndSpeak += StopTalking();
+        startGameBool = true;
     }
+
+    public static void NotNeededIntroduction()
+    {
+        noIntroduction = true;
+    }
+
 
     public void Update()
     {
+        if (startGameBool)
+        {
+            startGameBool = false;
+            StartIntroduction();
+            MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.yellow);
+            MagicRoomManager.instance.MagicRoomTextToSpeachManager.EndSpeak += StopTalking();
+        }
+
         if (buttonPressed)
         {
             buttonPressed = false;
             startGame();
+        }
+
+        if (noIntroduction)
+        {
+            noIntroduction = false;
+            introductionObjects.SetActive(false);
         }
     }
 

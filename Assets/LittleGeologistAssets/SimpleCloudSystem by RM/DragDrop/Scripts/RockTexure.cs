@@ -16,7 +16,8 @@ public class RockTexure : MonoBehaviour
 
     void Update()
     {
-        if (start) {
+        if (start)
+        {
             MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
             meshRenderer.material = materials[count];
         }

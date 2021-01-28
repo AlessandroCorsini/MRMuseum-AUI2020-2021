@@ -14,7 +14,7 @@ public class LittleGeologyIntroduction : MonoBehaviour
     public float textTime = 0.02f;
 
     public void Start()
-    { 
+    {
         StartIntroduction();
         MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.red);
         MagicRoomManager.instance.MagicRoomTextToSpeachManager.EndSpeak += StopTalking();
@@ -34,9 +34,6 @@ public class LittleGeologyIntroduction : MonoBehaviour
         //Play animation
         EmiAnimator.SetTrigger("talking");
 
-        //disabling hand object to prevent fault
-        hand.SetActive(false);
-
         // activate the text to speech component
         MagicRoomManager.instance.MagicRoomTextToSpeachManager.GenerateAudioFromText(introduction);
 
@@ -52,8 +49,6 @@ public class LittleGeologyIntroduction : MonoBehaviour
 
     public void BackToIdleEmi()
     {
-        // activating hand again
-        hand.SetActive(true);
         MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.black);
 
         //stopping Emi from talking
@@ -62,7 +57,7 @@ public class LittleGeologyIntroduction : MonoBehaviour
 
     private IEnumerator EffectTypeWriter()
     {
-        foreach(char character in introduction.ToCharArray())
+        foreach (char character in introduction.ToCharArray())
         {
             textBuble.text += character;
             yield return new WaitForSeconds(textTime);

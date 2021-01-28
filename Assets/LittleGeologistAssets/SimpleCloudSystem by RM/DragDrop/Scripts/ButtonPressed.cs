@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonPressed : MonoBehaviour
 {
 
-    public void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerStay(Collider collision)
     {
         if (Input.GetMouseButtonDown(0))
         {

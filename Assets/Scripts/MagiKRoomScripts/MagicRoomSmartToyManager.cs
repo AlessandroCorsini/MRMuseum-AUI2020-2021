@@ -265,8 +265,7 @@ public class MagicRoomSmartToyManager : MonoBehaviour
 
 public enum EventType
 {
-    TCP, UDP,
-    MouseDown
+    TCP, UDP
 }
 
 public class MessageUpdate

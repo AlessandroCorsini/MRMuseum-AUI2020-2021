@@ -13,10 +13,24 @@ public class ActivityIntroduction : MonoBehaviour
     public float textTime = 0.02f;
     public static string activityName;
     public static bool firstPress = true;
-    
+    public static bool start = false;
 
 
-    public void Start()
+    private void Update()
+    {
+        if (start)
+        {
+            start = false;
+            FakeStart();
+        }
+    }
+
+    public static void setStartIntroduction()
+    {
+        start = true;
+    }
+
+    public void FakeStart()
     {
         StartIntroduction();
         MagicRoomManager.instance.MagicRoomTextToSpeachManager.EndSpeak += StopTalking();
@@ -82,12 +96,9 @@ public class ActivityIntroduction : MonoBehaviour
         return firstPress;
     }
 
-    public static void SetFirstPress()
+    public static void SetFirstPress(bool b)
     {
-        if (firstPress)
-            firstPress = false;
-        else
-            firstPress = true;
+            firstPress = b;
     }
 
 }

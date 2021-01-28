@@ -10,7 +10,8 @@ using System.Linq;
 public class GameMechanism : MonoBehaviour
 {
 
-    public class Card{
+    public class Card
+    {
         public string animal;
         public string habitat;
         public string team;
@@ -115,8 +116,8 @@ public class GameMechanism : MonoBehaviour
 
 
 
-// Update is called once per frame
-void Update()
+    // Update is called once per frame
+    void Update()
     {
         if (startGame)
         {
@@ -206,13 +207,13 @@ void Update()
         IEnumerable<Card> searchedAnimalCard = allCards.Where(x => x.animal == card);
         if (searchedAnimalCard.ToList().Count() != 0) // se ho trovato l'animale
         {
-            if(selectedAnimal == null && selectedHabitat == null)
+            if (selectedAnimal == null && selectedHabitat == null)
             {
                 selectedAnimal = searchedAnimalCard.First().animal;
                 PlayAudioClip(selectedAnimal);
                 playingTeam = searchedAnimalCard.First().team;
             }
-            else if(selectedHabitat != null )
+            else if (selectedHabitat != null)
             {
                 playingTeam = searchedAnimalCard.First().team;
                 PlayAudioClip(searchedAnimalCard.First().animal);
@@ -267,7 +268,7 @@ void Update()
                 StartCoroutine(StartErrorDisplay("You cannot scan two habitats in a row. \n Please provide an animal and an habitat"));
                 ResetMatch();
             }
-        }     
+        }
 
     }
 
@@ -284,7 +285,7 @@ void Update()
     {
         if (habitat == "savana")
         {
-            if(activeRender == renderAntarticFirst || activeRender == renderAntarticSecond) // from antartide to savana
+            if (activeRender == renderAntarticFirst || activeRender == renderAntarticSecond) // from antartide to savana
             {
                 renderAntarticSecond.SetActive(true);
                 renderAntarticFirst.SetActive(false);
@@ -297,7 +298,7 @@ void Update()
                 //activeRender.SetActive(false);
                 activeRender = renderSavana;
             }
-            else if(activeRender == renderForestFirst || activeRender == renderForestSecond) // from forest to savana
+            else if (activeRender == renderForestFirst || activeRender == renderForestSecond) // from forest to savana
             {
                 renderForestSecond.SetActive(true);
                 renderForestFirst.SetActive(false);
@@ -312,7 +313,7 @@ void Update()
             }
 
         }
-        else if(habitat == "foresta")
+        else if (habitat == "foresta")
         {
 
             forestCamera.SetActive(true);
@@ -339,7 +340,7 @@ void Update()
                 activeRender = renderForestFirst;
             }
         }
-        else if(habitat == "antartide")
+        else if (habitat == "antartide")
         {
             antartideCamera.SetActive(true);
 
@@ -457,7 +458,7 @@ void Update()
     }
 
 
-    IEnumerator DisableRenderView(GameObject toBeDisabled,GameObject cameraToBeDisabled)
+    IEnumerator DisableRenderView(GameObject toBeDisabled, GameObject cameraToBeDisabled)
     {
         if (cameraToBeDisabled != null)
             cameraToBeDisabled.SetActive(false);
@@ -476,7 +477,7 @@ void Update()
             if (scoreA == 5)
                 StartCoroutine(DeclareWinner("TEAM A WINS"));
         }
-        else if(team == "B")
+        else if (team == "B")
         {
             scoreB += 1;
             if (scoreB == 5)
@@ -554,6 +555,7 @@ void Update()
 
     public void TimerEnded()
     {
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.blue);
         PlayWrongSounds.PlayWrongSound();
         timer.color = Color.red;
         active = false;
@@ -564,6 +566,11 @@ void Update()
             StartCoroutine(DeclareWinner("TEAM B WINS"));
         else
             StartCoroutine(DeclareWinner("DRAW"));
-        ;    }
+        ;
+    }
+
+    private void OnApplicationQuit()
+    {
+        Saving.Reset();
+    }
 }
- 

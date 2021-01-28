@@ -24,7 +24,12 @@ public class NavigationSetter : MonoBehaviour
         SharedInfos.setPlTransform(playerObject.transform);
         SharedInfos.setLastWaypointName("None");
         SharedInfos.setNextWaypointName(firstWaypoint.name);
-        SharedInfos.setMovement(new Vector3(firstWaypoint.transform.position.x, playerObject.transform.position.y, firstWaypoint.transform.position.z));
+
+        // Loading Player
+        PlayerType.InvokeLoad();
+
+        // @Lorenzo
+        //SharedInfos.setMovement(new Vector3(firstWaypoint.transform.position.x, playerObject.transform.position.y, firstWaypoint.transform.position.z));
         SharedInfos.setPlayerLayer(indexPlayerLayer);
     }
 

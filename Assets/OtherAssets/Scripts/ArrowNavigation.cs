@@ -24,6 +24,7 @@ public class ArrowNavigation : MonoBehaviour
             InputMR.clearNewWaypoint();
         }
 
+        /*
         if (ArrowManager.isHitRaycasting())
         {
             if (ArrowManager.getRaycastedArrowName().Equals(this.name))
@@ -40,6 +41,7 @@ public class ArrowNavigation : MonoBehaviour
                 ArrowManager.resetRaycastedArrowName();
             }
         }
+        */
     }
 
     private void setArrow()
@@ -68,7 +70,7 @@ public class ArrowNavigation : MonoBehaviour
         }
     }
 
-    private void fakeOnTriggerEnter()
+    private void OnTriggerEnter()
     {
         if (start == 0f)
         {
@@ -87,7 +89,7 @@ public class ArrowNavigation : MonoBehaviour
         }
     }
 
-    private void fakeOnTriggerExit()
+    private void OnTriggerExit()
     {
         end = Time.time;
 
@@ -115,12 +117,15 @@ public class ArrowNavigation : MonoBehaviour
                 {
                     if (ActivityIntroduction.GetFirstPress())
                     {
-                        ActivityIntroduction.SetFirstPress();
+                        ActivityIntroduction.SetFirstPress(false);
+                        ActivityIntroduction.setStartIntroduction();
                     }
                     else
                     {
+                        PlayerType.InvokeSave(); // Saving player position
                         gameMenu.SetActive(false);
                         string nextSceneName = ArrowManager.getNextSceneName();
+                        ActivityIntroduction.SetFirstPress(true);
                         LevelLoader.startTransition(nextSceneName);
                         return;
                     }
@@ -128,14 +133,15 @@ public class ArrowNavigation : MonoBehaviour
                 else
                 {
                     gameMenu.SetActive(false);
-                    ActivityIntroduction.SetFirstPress();
+                    ActivityIntroduction.SetFirstPress(true);
                 }
+
                 Debug.Log(this.name + ":: Event happended sent to InputMR");
                 InputMR.setEventHappened(this.name);
             }
         }
 
-        
+
 
         start = 0f;
     }

@@ -7,7 +7,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 //IDropHandler
-public class ItemSlot : MonoBehaviour {
+public class ItemSlot : MonoBehaviour
+{
 
     public List<GameObject> correctRocks;
     public GameObject slotStart;
@@ -44,16 +45,16 @@ public class ItemSlot : MonoBehaviour {
         start = true;
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter(Collider collision)
     {
         if (collision.transform.GetChild(0) != null)
         {
             detectedRock = collision.transform.GetChild(0).gameObject;
-                Debug.Log(detectedRock.name + " enter");
+            Debug.Log(detectedRock.name + " enter");
         }
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerStay(Collider collision)
     {
         if (Input.GetMouseButtonUp(0))
         {
@@ -63,13 +64,13 @@ public class ItemSlot : MonoBehaviour {
                 detectedRock.SetActive(false);
                 detectedRock.transform.SetParent(null);
                 StartCoroutine(StartFeedbackPositive());
-            }    
+            }
             else
             {
                 CameraShaker.GetInstance("Main Camera").ShakeOnce(4f, 4f, .1f, 2f);
                 StartCoroutine(StartFeedbackNegative());
                 detectedRock.GetComponent<RectTransform>().anchoredPosition = slotStart.GetComponent<RectTransform>().anchoredPosition;
-            }    
+            }
 
         }
     }
@@ -79,7 +80,7 @@ public class ItemSlot : MonoBehaviour {
     {
         int i = 0;
 
-        for (i = 0; i < 6 ; i++)
+        for (i = 0; i < 6; i++)
         {
             if (!lavaLevels[i].activeInHierarchy)
             {
@@ -92,12 +93,12 @@ public class ItemSlot : MonoBehaviour {
 
     private void nextRock()
     {
-        if(Counting.rockCounter < Counting.max)
+        if (Counting.rockCounter < Counting.max)
         {
             rocks[Counting.rockCounter].SetActive(true);
             Counting.updateCounter();
             RockTexure.updateCount();
-            nameDisplay.text = rocksNames[Counting.rockCounter-1];
+            nameDisplay.text = rocksNames[Counting.rockCounter - 1];
         }
         else
         {
@@ -114,6 +115,7 @@ public class ItemSlot : MonoBehaviour {
         gameObjects.GetComponent<CanvasGroup>().alpha = 0f;
         MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.red);
         yield return new WaitForSeconds(3f);
+        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.black);
         Debug.Log("transition");
         LevelLoader.startTransition(nextSceneName);
         canvas.SetActive(false);
@@ -143,4 +145,8 @@ public class ItemSlot : MonoBehaviour {
         yield return new WaitForSeconds(1.0f);
     }
 
+    private void OnApplicationQuit()
+    {
+        Saving.Reset();
+    }
 }

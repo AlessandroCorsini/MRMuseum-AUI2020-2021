@@ -40,23 +40,23 @@ public static class InputMR
     {
         if (direction.Equals("None"))
         {
-            //Debug.LogError(":: direction is None");
+            Debug.LogError(":: direction is None");
             return -1;
         } else if(direction.Equals("South"))
         {
-            //Debug.Log("Requested a South position");
+            Debug.Log("Requested a South position");
             return 0;
         } else if(direction.Equals("East"))
         {
-            //Debug.Log("Requested a East direction");
+            Debug.Log("Requested a East direction");
             return 1;
         } else if (direction.Equals("North"))
         {
-            //Debug.Log("Requested a North direction");
+            Debug.Log("Requested a North direction");
             return 2;
         } else if (direction.Equals("West"))
         {
-            //Debug.Log("Requested a West direction");
+            Debug.Log("Reuqested a West direction");
             return 3;
         }
 

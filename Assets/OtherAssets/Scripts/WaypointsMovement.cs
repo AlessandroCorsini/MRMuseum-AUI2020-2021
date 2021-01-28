@@ -107,6 +107,11 @@ public class WaypointsMovement : MonoBehaviour
         InputMR.setNewWaypoint();
         InputMR.clearEventHappened();
 
+        // Modifiche per salvataggio posizione del player
+        //@Fede
+        Debug.Log("Collision with:" + this.name);
+        PlayerType.setWaypointName(this.name);
+
         // now this waypoint is listening to the arrows in order to set the movement performed by NavigationSetter 
     }
 
@@ -122,38 +127,26 @@ public class WaypointsMovement : MonoBehaviour
 
         if (dir == 0)
         {
-            // trying to move south
-            if (wayPointSouth != null)
-                return moveToWaypoint(wayPointSouth);
-            else
-                return nullVector;
+            // trying to move right
+            return moveToWaypoint(wayPointSouth);
 
         }
         else if (dir == 1)
         {
-            // trying to move east
-            if (wayPointEast != null)
-                return moveToWaypoint(wayPointEast);
-            else
-                return nullVector;
+            // trying to move left
+            return moveToWaypoint(wayPointEast);
 
         }
         else if (dir == 2)
         {
             // trying to move up
-            if (wayPointNorth != null)
-                return moveToWaypoint(wayPointNorth);
-            else
-                return nullVector;
+            return moveToWaypoint(wayPointNorth);
 
         }
         else if (dir == 3)
         {
-            // trying to move left
-            if (wayPointWest != null)
-                return moveToWaypoint(wayPointWest);
-            else
-                return nullVector; 
+            // trying to move down
+            return moveToWaypoint(wayPointWest);
 
         }
         else
