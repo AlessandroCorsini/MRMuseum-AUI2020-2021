@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigame_LittleGeologist.unity
     guid: f2c65fc1590684744be909105b931335
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 61e3535f446fc4873a267b3486f7959c
   m_configObjects: {}
