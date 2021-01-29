@@ -7,6 +7,7 @@ public class MuseumIntroduction : MonoBehaviour
 {
     public Animator EmiAnimator;
     public string introduction;
+    public string introductionPart2;
     public Text textBuble;
     public Animator fadeOutAnimator;
     public static bool buttonPressed = false;
@@ -78,6 +79,16 @@ public class MuseumIntroduction : MonoBehaviour
     private IEnumerator EffectTypeWriter()
     {
         foreach (char character in introduction.ToCharArray())
+        {
+            textBuble.text += character;
+            yield return new WaitForSeconds(textTime);
+        }
+
+        yield return new WaitForSeconds(5f);
+
+        textBuble.text = "";
+
+        foreach (char character in introductionPart2.ToCharArray())
         {
             textBuble.text += character;
             yield return new WaitForSeconds(textTime);

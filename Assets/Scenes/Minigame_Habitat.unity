@@ -2312,9 +2312,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a440b19d298ca4da0b16fd1709aef6bd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 97ad173ecac994be191885fe6660608b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.15
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9239,7 +9239,7 @@ MonoBehaviour:
   teamBscore: {fileID: 1384224491}
   victoryMessage: {fileID: 32843960}
   timer: {fileID: 956724989}
-  startingTime: 300
+  startingTime: 5
   clips:
   - {fileID: 8300000, guid: 29ba1add52a1546e5b30c0156bae2b25, type: 3}
   - {fileID: 8300000, guid: f5bc92ccf123c42b7bc5ca7e70e1476a, type: 3}

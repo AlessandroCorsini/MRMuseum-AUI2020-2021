@@ -37,7 +37,6 @@ public class EndIntroduction : MonoBehaviour
     {
         //stopping Emi from talking
         EmiAnimator.SetTrigger("idle");
-        MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.black);
     }
 
     private IEnumerator EffectTypeWriter()
@@ -49,5 +48,10 @@ public class EndIntroduction : MonoBehaviour
         }
 
         BackToIdleEmi();
+    }
+
+    private void OnApplicationQuit()
+    {
+        Saving.Reset();
     }
 }
