@@ -57,6 +57,7 @@ public class HabitatIntroduction : MonoBehaviour
         //stopping Emi from talking
         EmiAnimator.SetTrigger("idle");
         MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.black);
+
     }
 
     private IEnumerator EffectTypeWriter()

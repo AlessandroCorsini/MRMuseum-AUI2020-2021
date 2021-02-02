@@ -78,6 +78,7 @@ public class MagicRoomSmartToyManager : MonoBehaviour
         {
             try
             {
+                Debug.Log(message);
                 JObject request = JObject.Parse(message);
                 string id = request.GetValue("id").Value<string>();
                 if (toys.TryGetValue(id, out GameObject value))

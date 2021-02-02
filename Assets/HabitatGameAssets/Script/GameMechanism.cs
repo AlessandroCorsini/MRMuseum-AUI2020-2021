@@ -24,6 +24,7 @@ public class GameMechanism : MonoBehaviour
     List<string> animalList = new List<string>();
     List<string> habitatList = new List<string>();
     List<string> teamList = new List<string>();
+    List<string> alreadyMatchedAnimals = new List<string>();
     string selectedAnimal = null;
     string selectedHabitat = null;
     string playingTeam = null;
@@ -72,6 +73,7 @@ public class GameMechanism : MonoBehaviour
     public GameObject finalEmiMessage;
 
     public Text error;
+
 
     // Start is called before the first frame update
     void Start()
@@ -189,6 +191,7 @@ public class GameMechanism : MonoBehaviour
                 }
                 else
                     TimerEnded();
+
             }
 
             teamAscore.text = scoreA.ToString();
@@ -201,41 +204,56 @@ public class GameMechanism : MonoBehaviour
         startGame = true;
     }
 
+    private void insertMatchedAnimal(string animal)
+    {
+        alreadyMatchedAnimals.Add(animal);
+    }
+
+    private bool alreadyMatched(string animal)
+    {
+        return alreadyMatchedAnimals.Contains(animal);
+    }
+
     private void CheckMatch(string card)
     {
 
         IEnumerable<Card> searchedAnimalCard = allCards.Where(x => x.animal == card);
         if (searchedAnimalCard.ToList().Count() != 0) // se ho trovato l'animale
         {
-            if (selectedAnimal == null && selectedHabitat == null)
+            if (!alreadyMatched(searchedAnimalCard.First().animal))
             {
-                selectedAnimal = searchedAnimalCard.First().animal;
-                PlayAudioClip(selectedAnimal);
-                playingTeam = searchedAnimalCard.First().team;
-            }
-            else if (selectedHabitat != null)
-            {
-                playingTeam = searchedAnimalCard.First().team;
-                PlayAudioClip(searchedAnimalCard.First().animal);
-
-                if (selectedHabitat == searchedAnimalCard.First().habitat)
+                if (selectedAnimal == null && selectedHabitat == null)
                 {
-                    StartCoroutine(StartFeedbackPositive());
-                    setAnimalActive(searchedAnimalCard.First().animal);
-                    UpdateScore(playingTeam);
+                    selectedAnimal = searchedAnimalCard.First().animal;
+                    PlayAudioClip(selectedAnimal);
+                    playingTeam = searchedAnimalCard.First().team;
+                }
+                else if (selectedHabitat != null)
+                {
+                    playingTeam = searchedAnimalCard.First().team;
+                    PlayAudioClip(searchedAnimalCard.First().animal);
+
+                    if (selectedHabitat == searchedAnimalCard.First().habitat)
+                    {
+                        StartCoroutine(StartFeedbackPositive());
+                        setAnimalActive(searchedAnimalCard.First().animal);
+                        UpdateScore(playingTeam);
+                        insertMatchedAnimal(searchedAnimalCard.First().animal);
+                    }
+                    else
+                    {
+                        StartCoroutine(StartFeedbackNegative());
+                    }
+
+                    ResetMatch();
                 }
                 else
                 {
-                    StartCoroutine(StartFeedbackNegative());
+                    StartCoroutine(StartErrorDisplay("You cannot scan two animals in a row. \n Please provide an animal and an habitat"));
+                    ResetMatch();
                 }
+            }
 
-                ResetMatch();
-            }
-            else
-            {
-                StartCoroutine(StartErrorDisplay("You cannot scan two animals in a row. \n Please provide an animal and an habitat"));
-                ResetMatch();
-            }
         }
 
         IEnumerable<Card> searchedHabitatCard = allCards.Where(x => x.habitat == card);
@@ -257,8 +275,10 @@ public class GameMechanism : MonoBehaviour
                     StartCoroutine(StartFeedbackPositive());
                     setAnimalActive(selectedAnimal);
                     UpdateScore(playingTeam);
+                    insertMatchedAnimal(selectedAnimal);
                     ScreenFade(searchedHabitatCard.First().habitat);
                     FloorFade(searchedHabitatCard.First().habitat);
+
                 }
 
                 ResetMatch();
@@ -492,12 +512,14 @@ public class GameMechanism : MonoBehaviour
         FinalFloorBackground.SetActive(true);
         finalEmiMessage.SetActive(true);
         MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.yellow);
+        MagicRoomManager.instance.MagicRoomAppliancesManager.SendChangeCommand("Macchina delle Bolle", "ON");
         activeRender.GetComponent<Animation>().Play("CrossFade");
         activeRenderFloor.GetComponent<Animation>().Play("CrossFade");
         victoryMessage.text = message;
         active = false;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(3.0f);
         MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.black);
+        MagicRoomManager.instance.MagicRoomAppliancesManager.SendChangeCommand("Macchina delle Bolle", "OFF");
     }
 
 

@@ -114,8 +114,10 @@ public class ItemSlot : MonoBehaviour
         winningObjects.SetActive(true);
         gameObjects.GetComponent<CanvasGroup>().alpha = 0f;
         MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.red);
+        MagicRoomManager.instance.MagicRoomAppliancesManager.SendChangeCommand("Macchina delle Bolle", "ON");
         yield return new WaitForSeconds(3f);
         MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.black);
+        MagicRoomManager.instance.MagicRoomAppliancesManager.SendChangeCommand("Macchina delle Bolle", "OFF");
         Debug.Log("transition");
         LevelLoader.startTransition(nextSceneName);
         canvas.SetActive(false);

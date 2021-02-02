@@ -37,6 +37,7 @@ public class EndIntroduction : MonoBehaviour
     {
         //stopping Emi from talking
         EmiAnimator.SetTrigger("idle");
+
     }
 
     private IEnumerator EffectTypeWriter()

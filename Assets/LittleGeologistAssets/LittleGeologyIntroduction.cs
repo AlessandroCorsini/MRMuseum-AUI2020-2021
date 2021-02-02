@@ -53,6 +53,7 @@ public class LittleGeologyIntroduction : MonoBehaviour
 
         //stopping Emi from talking
         EmiAnimator.SetTrigger("idle");
+
     }
 
     private IEnumerator EffectTypeWriter()
