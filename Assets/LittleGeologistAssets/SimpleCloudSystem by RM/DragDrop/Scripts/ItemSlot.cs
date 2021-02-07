@@ -95,6 +95,7 @@ public class ItemSlot : MonoBehaviour
     {
         if (Counting.rockCounter < Counting.max)
         {
+            Debug.Log("counting : " + Counting.rockCounter);
             rocks[Counting.rockCounter].SetActive(true);
             Counting.updateCounter();
             RockTexure.updateCount();
@@ -134,6 +135,7 @@ public class ItemSlot : MonoBehaviour
         MagicRoomManager.instance.MagicRoomLightManager.SendColor(Color.black);
         yield return new WaitForSeconds(1.0f);
         nextRock();
+        Debug.Log("chiamata dalla feedback");
     }
 
     public IEnumerator StartFeedbackNegative()

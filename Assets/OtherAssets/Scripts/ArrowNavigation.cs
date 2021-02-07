@@ -98,7 +98,7 @@ public class ArrowNavigation : MonoBehaviour
             star.SetActive(true);
             hoveredStar.SetActive(false);
             gameMenu.SetActive(true);
-            ActivityIntroduction.SetActivityName(ArrowManager.nextSceneName);
+            ActivityIntroduction.SetActivityName(ArrowManager.miniGameName);
         }
         else if (!disabledArrow)
         {

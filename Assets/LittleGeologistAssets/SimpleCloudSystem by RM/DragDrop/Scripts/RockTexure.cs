@@ -9,18 +9,17 @@ public class RockTexure : MonoBehaviour
     public static int count = 0;
     public static bool start = false;
 
+    /*
     public static void GameStart()
     {
         start = true;
     }
+    */
 
     void Update()
     {
-        if (start)
-        {
-            MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
-            meshRenderer.material = materials[count];
-        }
+         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+         meshRenderer.material = materials[count];
     }
 
     public static void updateCount()

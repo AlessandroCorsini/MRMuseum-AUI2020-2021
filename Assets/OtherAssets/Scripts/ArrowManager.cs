@@ -9,6 +9,7 @@ public class ArrowManager
     private static List<string> disabledDirections;
 
     public static string nextSceneName;
+    public static string miniGameName;
 
     private static string raycastedArrow = "None";
     private static bool hitRaycasting = false;
@@ -159,6 +160,16 @@ public class ArrowManager
     public static string getNextSceneName()
     {
         return nextSceneName;
+    }
+
+    public static void saveMiniGameName(string name)
+    {
+        miniGameName = name;
+    }
+
+    public static string getMiniGameName()
+    {
+        return miniGameName;
     }
 
 }

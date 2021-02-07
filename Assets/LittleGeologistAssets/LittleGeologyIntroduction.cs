@@ -70,9 +70,11 @@ public class LittleGeologyIntroduction : MonoBehaviour
     public void startGame()
     {
         StartCoroutine(fadeOutEmi());
+        /*
         ItemSlot.GameStart();
         DragDrop.GameStart();
         RockTexure.GameStart();
+        */
     }
 
     private IEnumerator fadeOutEmi()

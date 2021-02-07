@@ -21,6 +21,7 @@ public class WaypointsMovement : MonoBehaviour
     private bool[] starredDirections = new bool[4];
 
     public string nextSceneName;
+    public string miniGameName;
 
     private void Start()
     {
@@ -104,6 +105,7 @@ public class WaypointsMovement : MonoBehaviour
         ArrowManager.decodeDisabledDirections(getNotNullDirections());
         ArrowManager.decodeStarredDirections(starredDirections);
         ArrowManager.saveNextSceneName(nextSceneName);
+        ArrowManager.saveMiniGameName(miniGameName);
         InputMR.setNewWaypoint();
         InputMR.clearEventHappened();
 
